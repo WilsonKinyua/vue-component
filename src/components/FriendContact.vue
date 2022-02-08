@@ -26,8 +26,10 @@ export default {
     name: String,
     phone: String,
     emailAddress: String,
-    age: String
+    age: String,
+    id: String,
   },
+  emits: ["toggle-favorite"],
   data() {
     return {
       detailsAreVisible: false,
