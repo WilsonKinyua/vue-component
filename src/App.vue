@@ -3,6 +3,7 @@
     <h2>My friends</h2>
     <new-friend @add-contact="addContact"></new-friend>
     <friend-contact
+      @delete="deleteContact"
       v-for="friend in friends"
       :key="friend.id"
       :name="friend.name"
@@ -46,6 +47,9 @@ export default {
         isFavourite: false,
       };
       this.friends.push(newFriend);
+    },
+    deleteContact(friendId) {
+      this.friends = this.friends.filter((friend) => friend.id !== friendId);
     },
   },
 };

@@ -11,17 +11,12 @@
       <li>Email: {{ emailAddress }}</li>
       <li>Age: {{ age }}</li>
     </ul>
+    <button @click="$emit('delete',id)">Delete</button>
   </li>
 </template>
 
 <script>
 export default {
-  //   props: [
-  //       'name',
-  //       'phone',
-  //       'age',
-  //       'emailAddress'
-  //   ],
   props: {
     name: String,
     phone: String,
@@ -29,17 +24,10 @@ export default {
     age: String,
     id: String,
   },
-  emits: ["toggle-favorite"],
+  emits: ["toggle-favorite", "delete"],
   data() {
     return {
       detailsAreVisible: false,
-      //   friend: {
-      //     id: "manuel",
-      //     name: "john manuel",
-      //     age: 23,
-      //     phone: "334 434 3434",
-      //     email: "john@mail.com",
-      //   },
     };
   },
 
